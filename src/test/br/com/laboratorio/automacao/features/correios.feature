@@ -11,4 +11,4 @@ Feature: 002_Correios
 
     Examples: 
       | num_objeto      | usuario       | senha      |
-      | "12345" | "12345" | "12345" |
+      | "12345" 				| "12345" 			| "12345" 	 |

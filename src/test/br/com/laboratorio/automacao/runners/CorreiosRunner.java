@@ -9,7 +9,6 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions (
 		
 		plugin = { "pretty", "html:target/cucumber-report",
-				"junit:target/cucumber-report/junitResulta.xml",
 				"json:target/reports/CucumberReport.json"},
 		features = {
 				"src/test/br/com/laboratorio/automacao/features/correios.feature"},
