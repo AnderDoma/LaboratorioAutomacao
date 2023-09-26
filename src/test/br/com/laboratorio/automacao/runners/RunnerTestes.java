@@ -12,7 +12,7 @@ import cucumber.api.junit.Cucumber;
 				"junit:target/cucumber-report/junitResulta.xml",
 				"json:target/cucumber-report/jsonResult.json"},
 		features = {
-				"src/test/java/validar_pesquisa.feature"},
+				"src/test/br/com/laboratorio/automacao/features/correios.feature"},
 		glue = { "br.com.laboratorio.automacao.steps" },
 		tags = {}	
 		)

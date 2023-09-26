@@ -14,24 +14,19 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Google {
+public class GoogleSteps {
 	
 	static WebDriver driver = null;
 	static DriverFactory driverFact = new DriverFactory();
 	
 	@BeforeAll
 	public static void before_all() {
-		try {
-			driver = driverFact.getDriver();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		driver = DriverFactory.getDriver();
 	}
-	
+
 	@AfterAll
 	public static void after_all() {
-		driverFact.CloseDriver();
+		DriverFactory.CloseDriver();
 	}
 		
 	@Given("acesso a pagina do google")
