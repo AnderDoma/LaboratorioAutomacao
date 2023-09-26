@@ -9,14 +9,13 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions (
 		
 		plugin = { "pretty", "html:target/cucumber-report",
-				"junit:target/cucumber-report/junitResulta.xml",
-				"json:target/cucumber-report/jsonResult.json"},
+				"json:target/reports/CucumberReport.json"},
 		features = {
-				"src/test/br/com/laboratorio/automacao/features/correios.feature"},
-		glue = { "br.com.laboratorio.automacao.steps" },
-		tags = {}	
+				"src/test/br/com/laboratorio/automacao/features/google.feature"},
+		glue = { "br.com.laboratorio.automacao.steps", "br.com.laboratorio.automacao.utils" },
+		tags = {"~@ignore"}	
 		)
 	
-public class RunnerTestes {
+public class GoogleRunner {
 
 }

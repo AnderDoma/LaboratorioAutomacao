@@ -22,7 +22,6 @@ public class Utils {
 	}
 	
 	public void aguardarTempo(Integer tempo) throws InterruptedException {
-		System.out.println("tempo: " + tempo);
 		driver.manage().timeouts().implicitlyWait(tempo,TimeUnit.SECONDS) ;
 	}
 

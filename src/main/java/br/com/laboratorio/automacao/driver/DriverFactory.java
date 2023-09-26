@@ -14,17 +14,11 @@ public class DriverFactory {
 		}	
 	}
 
-	static WebDriver driver = null;
-	
+	protected static WebDriver driver = null;
+
 	public DriverFactory() {
 		System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
-		try {
-			DriverFactory.driver = new ChromeDriver();
-			System.out.println("Drive criado");
-		} catch (Exception e) {
-			throw e;
-		}
-
+		DriverFactory.driver = new ChromeDriver();
 	}
 
 	public static void CloseDriver() {

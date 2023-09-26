@@ -30,8 +30,8 @@ public class CorreiosSteps {
 		DriverFactory.CloseDriver();
 	}
 		
-	@Given("acesso a pagina dos correios")
-	public void acesso_a_pagina_dos_correios() throws InterruptedException {
+	@Given("que acesso a pagina dos correios")
+	public void que_acesso_a_pagina_dos_correios() throws InterruptedException {
 		utils.aguardarTempo(2);
 		logger.info("[acesso_a_pagina_dos_correios] acesso pagina dos correios");
 		driver.get("https://www.correios.com.br");
