@@ -5,6 +5,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Utils {
 	
@@ -14,6 +16,10 @@ public class Utils {
 		Utils.driver = driver;
 	}
 	
+	public WebDriver getDriver() {
+		return Utils.driver;
+	}
+	
 	public boolean elementoExiste(WebElement element) {
 		if (element == null) {
 			return false;
@@ -21,8 +27,17 @@ public class Utils {
 		return true;
 	}
 	
-	public void aguardarTempo(Integer tempo) throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(tempo,TimeUnit.SECONDS) ;
+	public void waitTimeOf(Integer tempo) throws InterruptedException {
+		Thread.sleep(tempo);
+	}
+	
+    public WebElement waitForElement(WebElement element, Long value){
+        WebDriverWait wait = new WebDriverWait(getDriver(), value);
+        return wait.until(ExpectedConditions.visibilityOf(element));
+    }
+    
+	public void waitPageLoad(Integer tempo) throws InterruptedException {
+		driver.manage().timeouts().pageLoadTimeout(tempo, TimeUnit.SECONDS);
 	}
 
 }

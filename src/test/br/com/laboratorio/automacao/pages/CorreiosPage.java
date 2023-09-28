@@ -50,14 +50,19 @@ public class CorreiosPage {
 	@FindBy(xpath = "//*[@id=\"password\"]")
 	private WebElement inputPassword;
 	
+	@FindBy(xpath = "//*[@id=\"alerta\"]")
+	private WebElement msgErroAutenticacao;
 	
     protected WebDriver driver;
 
-    public CorreiosPage(WebDriver driver) {
-        this.driver = driver;
+    public CorreiosPage(WebDriver wd) {
+        this.driver = wd;
         PageFactory.initElements(driver, this);
     }
  
+	public WebElement msgErroAutenticacao() {
+		return msgErroAutenticacao;
+	}
 	
 	public WebElement inputPassword() {
 		return inputPassword;
