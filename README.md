@@ -4,7 +4,7 @@ Projeto criado para implementar um laboratório de testes Java com selenuim + BD
 ![Projeto](https://github.com/AnderDoma/images/blob/main/cucumber.jpg)
 
 # Sobre o projeto
-Projeto criado com o objetivo de implementar framework com Java/Selenium/BDD, para a realização de testes com as melhores práticas.
+Projeto criado com o objetivo de implementar um framework com as tecnologias Java/Selenium/BDD, para a realização de testes com as melhores práticas.
 
 # Tecnologias utilizadas
 ## Automação de testes.
