@@ -1,5 +1,5 @@
 # AutomacaoDeTestes
-Projeto criado para ter um laboratório de testes utilizando automação de testes, com selenuim + BDD
+Projeto criado para implementar um laboratório de testes Java com selenuim + BDD
 
 ![Projeto](https://github.com/AnderDoma/images/blob/main/cucumber.jpg)
 
