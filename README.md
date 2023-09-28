@@ -6,8 +6,6 @@ Projeto criado para ter um laboratório de testes utilizando automação de test
 # Sobre o projeto
 Projeto criado com o objetivo de implementar framework com Java/Selenium/BDD, para a realização de testes com as melhores práticas.
 
-
-
 # Tecnologias utilizadas
 ## Automação de testes.
 - Java
@@ -26,7 +24,7 @@ ChromeDriver:
 
 ```bash
 # clonar repositório
-git clone https://github.com/AnderDoma/SpringBootProject.git
+git clone https://github.com/AnderDoma/Selenium.BDD.JAVA.git
 
 # Autor
 
