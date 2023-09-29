@@ -20,7 +20,7 @@ public class CorreiosPage {
 	@FindBy(xpath = "//*[@id=\\\"objetos\\\"]")
 	private WebElement inputPesquiseSeuObj;
 	
-	@FindBy(xpath = "//*[@id=\"menu-content\"]/div/div/ul[2]/li/a")
+	@FindBy(xpath = "//*[@id=\"menu-content\"]/div/div/ul[2]/li/a/img")
 	private WebElement menuMeusCorreios;
 	
 	@FindBy(xpath = "//*[@id=\"menu-content\"]/div/div/ul[2]/li/ul/li[1]")
@@ -160,6 +160,4 @@ public class CorreiosPage {
 	public void inserirPassword(String password) {
 		inputPassword.sendKeys(password);
 	}
-	
-	
 }

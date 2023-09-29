@@ -19,7 +19,6 @@ public class DriverFactory {
 	protected static WebDriver driver = null;
 
 	public DriverFactory() {
-		
 		try {
 			System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
 			DriverFactory.driver = new ChromeDriver();
@@ -27,7 +26,6 @@ public class DriverFactory {
 		} catch (Exception e) {
 			System.out.println("Erro ao abrir o driver");
 		}
-	
 	}
 
 	public static void closeDriver() throws Throwable {
