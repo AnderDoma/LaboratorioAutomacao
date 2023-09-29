@@ -1,6 +1,7 @@
 package br.com.laboratorio.automacao.utils;
 
 
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Utils {
 	
 	static WebDriver driver = null;
+
 	
 	public Utils(WebDriver driver) {
 		Utils.driver = driver;
@@ -21,19 +23,35 @@ public class Utils {
 	}
 	
 	public boolean elementoExiste(WebElement element) {
-		if (element == null) {
+		try {
+			element.isDisplayed();
+			return true;
+		} catch (NoSuchElementException e) {
 			return false;
 		}
-		return true;
+
+	}
+	
+	public boolean elementoExiste(WebElement element, int segundos) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, segundos);
+			wait.until(ExpectedConditions.visibilityOf(element));
+			element.isDisplayed();
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+
 	}
 	
 	public void waitTimeOf(Integer tempo) throws InterruptedException {
-		Thread.sleep(tempo);
+		int tempoEspera = tempo * 1000;
+		Thread.sleep(tempoEspera);
 	}
 	
-    public WebElement waitForElement(WebElement element, Long value){
+    public void waitForElement(WebElement element, Long value){
         WebDriverWait wait = new WebDriverWait(getDriver(), value);
-        return wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
     
 	public void waitPageLoad(Integer tempo) throws InterruptedException {
