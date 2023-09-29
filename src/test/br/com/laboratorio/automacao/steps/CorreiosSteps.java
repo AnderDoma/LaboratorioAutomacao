@@ -29,7 +29,7 @@ public class CorreiosSteps extends Base {
 		driver.get("https://www.correios.com.br");
 		utils.waitPageLoad(2);
 	
-		if(utils.elementoExiste(correiosPage.btnAceitoCookies(), 4)){
+		if(utils.elementExist(correiosPage.btnAceitoCookies(), 4)){
 			correiosPage.clicarAceitarCookies();
 		}
 	}
@@ -37,12 +37,12 @@ public class CorreiosSteps extends Base {
 	@Given("^acesso a pagina de autenticacao$")
 	public void acesso_a_pagina_de_autenticacao() throws Throwable {
 		logger.info("[acesso_a_pagina_de_autenticacao] Acesso a pagina de autenticação");
-		assertTrue(utils.elementoExiste(correiosPage.menuMeusCorreios(), 10));
+		assertTrue(utils.elementExist(correiosPage.menuMeusCorreios(), 10));
 		correiosPage.clicarMenuMeusCorreios();
-		assertTrue(utils.elementoExiste(correiosPage.opcaoMeusCorreios()));
+		assertTrue(utils.elementExist(correiosPage.opcaoMeusCorreios()));
 		correiosPage.clicarOpcaoMeusCorreios();
 		utils.waitTimeOf(2);
-		assertTrue(utils.elementoExiste(correiosPage.btnEntrar()));
+		assertTrue(utils.elementExist(correiosPage.btnEntrar()));
 		correiosPage.clicarBtnEntrar();
 		utils.waitTimeOf(2);
 	}
@@ -51,13 +51,13 @@ public class CorreiosSteps extends Base {
 	public void autentico_o_usuario_no_site_dos_correios(String usuario, String senha) throws Throwable {
 		logger.info("[autentico_o_usuario_no_site_dos_correios] Autenticação usuário");
 
-		assertTrue(utils.elementoExiste(correiosPage.inputUserName(), 3));
-		assertTrue(utils.elementoExiste(correiosPage.inputPassword()));
+		assertTrue(utils.elementExist(correiosPage.inputUserName(), 3));
+		assertTrue(utils.elementExist(correiosPage.inputPassword()));
 		
 		correiosPage.inserirPassword(senha);
 		correiosPage.inserirUserName(usuario);
 		
-		assertTrue(utils.elementoExiste(correiosPage.btnEntrarSenha()));
+		assertTrue(utils.elementExist(correiosPage.btnEntrarSenha()));
 		correiosPage.clicarBtnEntrarSenha();
 		
 	}
@@ -66,10 +66,7 @@ public class CorreiosSteps extends Base {
 	public void acompanho_meu_objeto(String objetoRastreamento) throws Throwable {
 		logger.info("[acompanho_meu_objeto] Clico em acompanhar objetos");
 		utils.waitTimeOf(2);
-		boolean valor = utils.elementoExiste(correiosPage.boxAcompanheSeuObjLogado());
-		System.out.println(correiosPage.boxAcompanheSeuObjLogado().getClass());
-		System.out.println("Valor do elemento: " + valor);
-		assertTrue(utils.elementoExiste(correiosPage.boxAcompanheSeuObjLogado()));
+		assertTrue(utils.elementExist(correiosPage.boxAcompanheSeuObjLogado()));
 		correiosPage.clicarBoxAcompanheSeuObjLogado();	
 	}
 	
@@ -77,12 +74,12 @@ public class CorreiosSteps extends Base {
 	public void valido_o_resultado_da_pesquisa_do_objeto() throws Throwable {
 		logger.info("[valido_o_resultado_da_pesquisa_do_objeto] Verifico os objetos rastreados");
 		utils.waitTimeOf(2);
-		assertTrue(utils.elementoExiste(correiosPage.lstDeObjetosRastreados()));
+		assertTrue(utils.elementExist(correiosPage.lstDeObjetosRastreados()));
 	}
 
 	@Then("^valido a mensagem de erro de autenticacao$")
 	public void valido_a_mensagem_de_erro_de_autenticacao() throws Throwable {
-		assertTrue(utils.elementoExiste(correiosPage.msgErroAutenticacao()));
+		assertTrue(utils.elementExist(correiosPage.msgErroAutenticacao()));
 		assertEquals("Usuário ou senha inválidos.\nOK", correiosPage.msgErroAutenticacao().getText());
 	}
 
