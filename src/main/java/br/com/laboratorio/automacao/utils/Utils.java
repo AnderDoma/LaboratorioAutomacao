@@ -22,7 +22,7 @@ public class Utils {
 		return Utils.driver;
 	}
 	
-	public boolean elementoExiste(WebElement element) {
+	public boolean elementExist(WebElement element) {
 		try {
 			element.isDisplayed();
 			return true;
@@ -32,7 +32,7 @@ public class Utils {
 
 	}
 	
-	public boolean elementoExiste(WebElement element, int segundos) {
+	public boolean elementExist(WebElement element, int segundos) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, segundos);
 			wait.until(ExpectedConditions.visibilityOf(element));
